@@ -3,11 +3,18 @@ import { connect } from 'react-redux';
 import './HomeHeader.scss';
 import logo from '../../assets/logoimage.svg';
 import { FormattedMessage } from "react-intl";
+import { LANGUAGES } from '../../utils';
+import { changeLanguageApp } from '../../store/actions';
 
 
 class HomeHeader extends Component {
+
+    changeLanguage = (language) => {
+        this.props.changeLanguageAppRedux(language);
+    }
     render() {
-        console.log('check props: ', this.props);
+        let language = this.props.language;
+        console.log('check language: ', language);
         return (
             <React.Fragment>
                 <div className="home-header-container">
@@ -38,8 +45,8 @@ class HomeHeader extends Component {
                             <div className="support"><i className="fas fa-question-circle"></i>
                                 <FormattedMessage id='homeheader.support' />
                             </div>
-                            <div className="language-vi">VN</div>
-                            <div className="language-en">EN</div>
+                            <div className={language === LANGUAGES.VI ? "language-vi active" : "language-vi"}><span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span></div>
+                            <div className={language === LANGUAGES.EN ? "language-en active" : "language-en"}><span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span></div>
                         </div>
                     </div>
 
@@ -61,7 +68,7 @@ class HomeHeader extends Component {
                                 <div className="text-child"><FormattedMessage id='banner.child1' /></div>
                             </div>
                             <div className="option-child">
-                                <div className="icon-child"><i class="fas fa-mobile-alt"></i></div>
+                                <div className="icon-child"><i className="fas fa-mobile-alt"></i></div>
                                 <div className="text-child"><FormattedMessage id='banner.child2' /></div>
                             </div>
                             <div className="option-child">
@@ -69,7 +76,7 @@ class HomeHeader extends Component {
                                 <div className="text-child"><FormattedMessage id='banner.child3' /></div>
                             </div>
                             <div className="option-child">
-                                <div className="icon-child"><i class="fas fa-microchip"></i></div>
+                                <div className="icon-child"><i className="fas fa-microchip"></i></div>
                                 <div className="text-child"><FormattedMessage id='banner.child4' /></div>
                             </div>
                             <div className="option-child">
@@ -77,7 +84,7 @@ class HomeHeader extends Component {
                                 <div className="text-child"><FormattedMessage id='banner.child5' /></div>
                             </div>
                             <div className="option-child">
-                                <div className="icon-child"><i class="far fa-smile"></i></div>
+                                <div className="icon-child"><i className="far fa-smile"></i></div>
                                 <div className="text-child"><FormattedMessage id='banner.child6' /></div>
                             </div>
                         </div>
@@ -97,6 +104,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language))
     };
 };
 
