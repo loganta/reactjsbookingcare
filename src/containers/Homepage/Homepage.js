@@ -2,14 +2,30 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import HomeHeader from "./HomeHeader";
 import Specialty from './Section/Specialty';
+import MedicalFacility from "./Section/MedicalFacility";
+import OutStandingDoctor from './Section/OutStandingDoctor';
+import HandBook from './Section/HandBook';
+
+import './Homepage.scss';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css'
 
 class Homepage extends Component {
     render() {
+        var settings = {
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 1
+        };
         return (
             <div>
                 <HomeHeader />
-                <Specialty />
-                <div style={{ height: '300px' }}></div>
+                <Specialty settings={settings} />
+                <MedicalFacility settings={settings} />
+                <OutStandingDoctor settings={settings} />
+                <HandBook settings={settings} />
             </div>
         );
     }
@@ -17,7 +33,8 @@ class Homepage extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn,
+        language: state.app.language
     };
 };
 
