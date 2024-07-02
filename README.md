@@ -145,3 +145,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
       }
 
   ==================================================================================
+
+  ==================================================
+ # Khóa học Fullstack SERN (SQL, Express.js, React.js, Node.js)
+ https://www.youtube.com/playlist?list=PLncHg6Kn2JT6E38Z3kit9Hnif1xC_9VqI
