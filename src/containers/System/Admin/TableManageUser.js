@@ -30,9 +30,6 @@ class TableManageUser extends Component {
     }
 
     render() {
-        console.log('check all user', this.props.listUsers);
-        console.log('check state:', this.state.usersRedux);
-
         let arrUsers = this.state.usersRedux;
 
         return (
@@ -74,7 +71,7 @@ class TableManageUser extends Component {
 
 const mapStateToProps = state => {
     return {
-        listUsers: state.admin.listUsers
+        listUsers: state.admin.users
     };
 };
 

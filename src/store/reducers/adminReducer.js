@@ -49,8 +49,6 @@ const adminReducer = (state = initialState, action) => {
                 ...state
             }
         case actionTypes.FETCH_ALL_USERS_SUCCESS:
-            console.log('vao admin reducer');
-            console.log(action.users);
             state.users = action.users;
             return {
                 ...state
