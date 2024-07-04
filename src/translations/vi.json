@@ -47,7 +47,8 @@
         "gender": "Giới tính",
         "position": "Chức danh",
         "roleId": "Vai trò",
+        "image": "Ảnh đại điện",
         "save": "Lưu user",
-        "image": "Ảnh đại điện"
+        "edit": "Lưu thay đổi"
     }
 }

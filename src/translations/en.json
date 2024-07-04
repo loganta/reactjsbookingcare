@@ -47,7 +47,8 @@
         "gender": "Gender",
         "position": "Position",
         "roleId": "RoldId",
+        "image": "User Avatar",
         "save": "Save User",
-        "image": "User Avatar"
+        "edit": "Edit User"
     }
 }

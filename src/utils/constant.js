@@ -25,3 +25,11 @@ export const YesNoObj = {
     YES: 'Y',
     NO: 'N'
 }
+
+export const CRUD_ACTIONS = {
+    CREATE: "CREATE",
+    EDIT: "EDIT",
+    UPDATE: "UPDATE",
+    DELETE: "DELETE",
+    READ: "READ"
+}

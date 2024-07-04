@@ -6,6 +6,10 @@ const actionTypes = Object.freeze({
     //user
     ADD_USER_SUCCESS: 'ADD_USER_SUCCESS',
 
+    //edit user
+    EDIT_USER_SUCCESS: 'EDIT_USER_SUCCESS',
+    EDIT_USER_FAILED: 'EDIT_USER_FAILED',
+
     //change language
     CHANGE_LANGUAGE: 'CHANGE_LANGUAGE',
 
